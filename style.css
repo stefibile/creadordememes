@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+h1 {
+    font-family: 'Open Sans',sans-serif;
+    font-size: 36px; 
+    color: #FFFFFF;
+    font-weight: 600;
+    letter-spacing: -1px;
+    margin-top: 10px;
+}
+
+h3 {
+    font-family: 'Open Sans',sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #FFFFFF;
+
+}
+h4 {
+    font-family: 'Open Sans',sans-serif;
+    font-size: 14px;
+    color: #FFFFFF;
+    margin: 5px;
+}
+
+h5 {
+    font-family: 'Open Sans',sans-serif;
+    font-size: 12px;
+    color: #FFFFFF;
+
+}
+header {
+    background-color: #191e2b;
+    height: 120px;
+}
+main {
+    background-color: #30343f;
+    height: 100vh;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-item {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.icon {
+    color: #FFFFFF;
+}
+
+.meme-text {
+    width: 610px;
+    height: 120px;
+    background-color: #FFFFFF;
+
+}
+
+.image-container {
+    width: 610px;
+    height: 375px;
+    background-color: #000000;
+}
+
+.download-meme {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2d7b31;
+    color: #FFFF;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.aside {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 260px;
+    height: 100%;
+    overflow-y: scroll;
+    background-color: #252935;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 30px 15px;
+}
+
+label {
+    color: #ffffff;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 12px;
+}
+
+.image-aside {
+}
+
+.text-aside {
+    display: none;
+}
+
