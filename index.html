@@ -61,15 +61,20 @@
             </div>
             <div>
             <h5>FONDO</h5>
-                <div>
-                    <input type="color">
-                    <select name="background-style" id=" ">
-                        <option value="ninguno">Ninguno</option>
+                <div class="div-filtros">
+                    <div class="style-filter-color">
+                    <input class="button-color" type="color" value="#ffffff">
+                    <span>#FFFFFF</span>
+                    </div>
+                    <div class="style-filter">
+                    <select aria-label="filters" name="background-style" id=" ">
+                        <option class="style-image" value="ninguno">Ninguno</option>
                         <option value="aclarar">Aclarar</option>
                         <option value="oscurecer">Oscurecer</option>
                         <option value="diferencia">Diferencia</option>
                         <option value="luminosidad">Luminosidad</option>
-                        <option value="multiplicar">Multiplicar</option>          
+                        <option value="multiplicar">Multiplicar</option>  
+                    </div>        
                     </select>
                 </div>
             </div>
@@ -103,7 +108,7 @@
                     <input id="negativo" type="range" min="0" max="1">
                 </label>            
             </div>
-            <button type="reset">Restablecer filtros</button>   
+            <button type="reset" class="reset-button"><h4>Restablecer filtros</h4></button>   
         </form>
 
         <form class="text-aside">
