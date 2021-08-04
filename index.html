@@ -17,16 +17,16 @@
             <h1>Generador de Memes</h1>
             <ul class="nav">
                 <li class="nav-item">
-                   <i class="icon fas fa-file-image"></i>
+                    <i class="icon fas fa-file-image"></i>
                     <h4>Imagen</h4>
                 </li>
                 <li class="nav-item"></li>
                 <i class="icon fas fa-font"></i>
-                    <h4>Texto</h4>
+                <h4>Texto</h4>
                 </li>
                 <li class="nav-item"></li>
                 <i class="icon far fa-lightbulb"></i>
-                    <h4>Modo oscuro</h4>
+                <h4>Modo oscuro</h4>
                 </li>
             </ul>
         </div>
@@ -53,7 +53,7 @@
     </main>
 
     <aside class="aside">
-        <form class="image-aside">
+        <!-- <form class="image-aside">
             <h3>IMAGEN</h3>
             <div>
                 <h5>URL</h5>
@@ -109,45 +109,61 @@
                 </label>            
             </div>
             <button type="reset" class="reset-button"><h4>Restablecer filtros</h4></button>   
-        </form>
+        </form> -->
 
-        <form class="text-aside">
+        <form class="image-aside">
             <h3>TEXTO</h3>
-            <div>
+            <div class="style-filter-text">
                 <h5>SUPERIOR</h5>
-                <input type="text-area" placeholder="TOP TEXT">
-                <input type="checkbox" class="checkbox" name="image-text-sup" id="image-text-sup" value="image-text-sup">Sin texto superior
+                <label>
+                    <textarea name="text-area" placeholder="TOP TEXT" class="input-text" id="" cols="7" rows="2"></textarea>
+                </label>
+
+                <div class="div-text-checkbox">
+                    <input type="checkbox" class="checkbox" name="image-text-sup" id="image-text-sup"
+                        value="image-text-sup">
+                    <label class="text-checkbox">Sin texto en la parte superior</label>
+                </div>
             </div>
-            <div>
+            <div class="style-filter-text">
                 <h5>INFERIOR</h5>
-                <input type="text-area" placeholder="BOTTOM TEXT">
-                <input type="checkbox" class="checkbox" name="image-text-bottom" id="image-text-bottom" value="image-text-bottom">Sin texto inferior
+                <label>
+                    <textarea name="text-area" placeholder="BOTTOM TEXT" class="input-text" id="" cols="7" rows="2"></textarea>
+                </label>
+
+                <div class="div-text-checkbox">
+                    <input type="checkbox" class="checkbox" name="image-text-bottom" id="image-text-bottom"
+                        value="image-text-bottom">
+                    <label class="text-checkbox">Sin texto en la parte inferior</label>
+                </div>
+
+
             </div>
             <div>
                 <h5>FUENTE</h5>
                 <select name="font-style" id="font-selector">
                     <option value="arial">Arial</option>
-                    <option value="arial-black">Arial Black</option>                
-                    <option value="american-typewriter">American Typewriter</option>  
-                    <option value="andale-mono">Andale Mono</option>  
-                    <option value="comic-sans-ms">Comic Sans MS</option>   
-                    <option value="helvetica">Helvetica</option> 
-                    <option value="impact">Impact</option>      
+                    <option value="arial-black">Arial Black</option>
+                    <option value="american-typewriter">American Typewriter</option>
+                    <option value="andale-mono">Andale Mono</option>
+                    <option value="comic-sans-ms">Comic Sans MS</option>
+                    <option value="helvetica">Helvetica</option>
+                    <option value="impact">Impact</option>
                     <option value="verdana">Verdana</option>
-                    <option value="times-new-roman">Times New Roman</option>                
+                    <option value="times-new-roman">Times New Roman</option>
             </div>
             <div>
-                 <input type="number" id="font-size" name="font-size" placeholder="40">
+                <input type="number" id="font-size" name="font-size" placeholder="40">
             </div>
             <div>
                 <button>
                     <i class="text-style "></i>
                 </button>
                 <button>
-                     <i class="text-style "></i>
+                    <i class="text-style "></i>
                 </button>
                 <button>
-                     <i class="text-style "></i>
+                    <i class="text-style "></i>
                 </button>
             </div>
             <div>
@@ -156,10 +172,11 @@
                     <input type="color">
                 </div>
                 <div>
-                <h5>FONDO</h5>
+                    <h5>FONDO</h5>
                     <input type="color">
                 </div>
-                    <input type="checkbox" class="checkbox" name="text-transparent" id="transparence-text" value="fondo-transparente">Fondo Transparente
+                <input type="checkbox" class="checkbox" name="text-transparent" id="transparence-text"
+                    value="fondo-transparente">Fondo Transparente
             </div>
             <div>
                 <h5>CONTORNO</h5>
@@ -176,12 +193,12 @@
             <div>
                 <h5>INTERLINEADO</h5>
                 <select name="line-spacing" id="line-spacing">
-                <option value="0.8">0.8</option>  
-                <option value="1">1</option>                   
-                <option value="1.2">1.2</option>   
-                <option value="1.5">1.5</option>   
-                <option value="2">2</option>
-                <option value="2.5">2.5</option>                   
+                    <option value="0.8">0.8</option>
+                    <option value="1">1</option>
+                    <option value="1.2">1.2</option>
+                    <option value="1.5">1.5</option>
+                    <option value="2">2</option>
+                    <option value="2.5">2.5</option>
             </div>
         </form>
     </aside>
