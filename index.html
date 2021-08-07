@@ -67,15 +67,17 @@
                     <span>#FFFFFF</span>
                     </div>
                     <div class="style-filter">
-                    <select aria-label="filters" name="background-style" id=" ">
-                        <option class="style-image" value="ninguno">Ninguno</option>
-                        <option value="aclarar">Aclarar</option>
-                        <option value="oscurecer">Oscurecer</option>
-                        <option value="diferencia">Diferencia</option>
-                        <option value="luminosidad">Luminosidad</option>
-                        <option value="multiplicar">Multiplicar</option>  
-                    </div>        
-                    </select>
+                    <label>
+                      <select name="background-style" id=" ">
+                      <option class="style-image" value="ninguno">Ninguno</option>
+                     <option value="aclarar">Aclarar</option>
+                     <option value="oscurecer">Oscurecer</option>
+                     <option value="diferencia">Diferencia</option>
+                     <option value="luminosidad">Luminosidad</option>
+                     <option value="multiplicar">Multiplicar</option>      
+                     </select>
+                     </label>
+                     </div>    
                 </div>
             </div>
             <div>
@@ -116,7 +118,8 @@
             <div class="style-filter-text">
                 <h5>SUPERIOR</h5>
                 <label>
-                    <textarea name="text-area" placeholder="TOP TEXT" class="input-text" id="" cols="7" rows="2"></textarea>
+                    <textarea name="text-area" placeholder="TOP TEXT" class="input-text" id="" cols="7"
+                        rows="2"></textarea>
                 </label>
 
                 <div class="div-text-checkbox">
@@ -128,7 +131,8 @@
             <div class="style-filter-text">
                 <h5>INFERIOR</h5>
                 <label>
-                    <textarea name="text-area" placeholder="BOTTOM TEXT" class="input-text" id="" cols="7" rows="2"></textarea>
+                    <textarea name="text-area" placeholder="BOTTOM TEXT" class="input-text" id="" cols="7"
+                        rows="2"></textarea>
                 </label>
 
                 <div class="div-text-checkbox">
@@ -139,31 +143,35 @@
 
 
             </div>
-            <div>
+            <div class="font-style">
                 <h5>FUENTE</h5>
-                <select name="font-style" id="font-selector">
-                    <option value="arial">Arial</option>
-                    <option value="arial-black">Arial Black</option>
-                    <option value="american-typewriter">American Typewriter</option>
-                    <option value="andale-mono">Andale Mono</option>
-                    <option value="comic-sans-ms">Comic Sans MS</option>
-                    <option value="helvetica">Helvetica</option>
-                    <option value="impact">Impact</option>
-                    <option value="verdana">Verdana</option>
-                    <option value="times-new-roman">Times New Roman</option>
+                <div class="style-filter">
+                    <label>
+                        <select name="font-style" id="font-selector">
+                            <option value="arial">Arial</option>
+                            <option value="arial-black">Arial Black</option>
+                            <option value="american-typewriter">American Typewriter</option>
+                            <option value="andale-mono">Andale Mono</option>
+                            <option value="comic-sans-ms">Comic Sans MS</option>
+                            <option value="helvetica">Helvetica</option>
+                            <option value="impact">Impact</option>
+                            <option value="verdana">Verdana</option>
+                            <option value="times-new-roman">Times New Roman</option>
+                    </label>
+                </div>
             </div>
             <div>
-                <input type="number" id="font-size" name="font-size" placeholder="40">
+                <input type="number" id="font-size" name="font-size" value="40">
             </div>
-            <div>
-                <button>
-                    <i class="text-style "></i>
+            <div class="button-style">
+                <button class="text-style">
+                    <i class="icon fas fa-align-left"></i>
                 </button>
-                <button>
-                    <i class="text-style "></i>
+                <button class="text-style">
+                    <i class="icon fas fa-align-center"></i>
                 </button>
-                <button>
-                    <i class="text-style "></i>
+                <button class="text-style">
+                    <i class="icon fas fa-align-right"></i>
                 </button>
             </div>
             <div>
@@ -175,30 +183,37 @@
                     <h5>FONDO</h5>
                     <input type="color">
                 </div>
-                <input type="checkbox" class="checkbox" name="text-transparent" id="transparence-text"
-                    value="fondo-transparente">Fondo Transparente
+                <div class="div-text-checkbox">
+                    <input type="checkbox" class="checkbox" name="text-transparent" id="transparence-text">
+                    <label class="text-checkbox">Fondo Transparente</label>
+                </div>
             </div>
             <div>
                 <h5>CONTORNO</h5>
-                <div>
-                    <button>Ninguno</button>
-                    <button>Claro</button>
-                    <button>Oscuro</button>
+                <div class="div-contorn">
+                    <button class="text-style-contorn">Ninguno</button>
+                    <button class="text-style-contorn">Claro</button>
+                    <button class="text-style-contorn">Oscuro</button>
                 </div>
             </div>
             <div>
                 <h5>ESPACIADO</h5>
-                <input type="number" id="text-spacing" name="text-spacing" placeholder="35">
+                <input type="number" id="text-spacing" name="text-spacing" value="35">
             </div>
             <div>
                 <h5>INTERLINEADO</h5>
-                <select name="line-spacing" id="line-spacing">
-                    <option value="0.8">0.8</option>
-                    <option value="1">1</option>
-                    <option value="1.2">1.2</option>
-                    <option value="1.5">1.5</option>
-                    <option value="2">2</option>
-                    <option value="2.5">2.5</option>
+                <div class="style-filter">
+                    <label>
+                        <select name="line-spacing" id="line-spacing">
+                            <option value="0.8">0.8</option>
+                            <option value="1">1</option>
+                            <option value="1.2">1.2</option>
+                            <option value="1.5">1.5</option>
+                            <option value="2">2</option>
+                            <option value="2.5">2.5</option>
+                        </select>
+                    </label>
+                </div>
             </div>
         </form>
     </aside>
