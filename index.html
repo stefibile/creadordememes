@@ -143,11 +143,11 @@
 
 
             </div>
-            <div class="font-style">
+            <div class="div-font-style">
                 <h5>FUENTE</h5>
                 <div class="style-filter">
                     <label>
-                        <select name="font-style" id="font-selector">
+                        <select name="font-style" id="font-selector" class="text-style">
                             <option value="arial">Arial</option>
                             <option value="arial-black">Arial Black</option>
                             <option value="american-typewriter">American Typewriter</option>
@@ -157,37 +157,45 @@
                             <option value="impact">Impact</option>
                             <option value="verdana">Verdana</option>
                             <option value="times-new-roman">Times New Roman</option>
+                            </select>
                     </label>
                 </div>
             </div>
-            <div>
-                <input type="number" id="font-size" name="font-size" value="40">
+            <div class="div-font-size">
+                <input type="number" id="font-size" class="input-font-size w50" name="font-size" value="40">
+                <div class="button-style">
+                    <button class="text-style">
+                        <i class="icon fas fa-align-left"></i>
+                    </button>
+                    <button class="text-style">
+                        <i class="icon fas fa-align-center"></i>
+                    </button>
+                    <button class="text-style">
+                        <i class="icon fas fa-align-right"></i>
+                    </button>
+                </div>
             </div>
-            <div class="button-style">
-                <button class="text-style">
-                    <i class="icon fas fa-align-left"></i>
-                </button>
-                <button class="text-style">
-                    <i class="icon fas fa-align-center"></i>
-                </button>
-                <button class="text-style">
-                    <i class="icon fas fa-align-right"></i>
-                </button>
-            </div>
-            <div>
+            <div class="div-color">
                 <div>
                     <h5>COLOR</h5>
-                    <input type="color">
+                    <div class="style-filter-color">
+                        <input class="button-color" type="color" value="#000000">
+                        <span>#000000</span>
+                    </div>
                 </div>
                 <div>
                     <h5>FONDO</h5>
-                    <input type="color">
+                    <div class="style-filter-color">
+                        <input class="button-color" type="color" value="#000000">
+                        <span>#000000</span>
+                    </div>
                 </div>
+            </div>
                 <div class="div-text-checkbox">
                     <input type="checkbox" class="checkbox" name="text-transparent" id="transparence-text">
                     <label class="text-checkbox">Fondo Transparente</label>
                 </div>
-            </div>
+            
             <div>
                 <h5>CONTORNO</h5>
                 <div class="div-contorn">
@@ -196,15 +204,15 @@
                     <button class="text-style-contorn">Oscuro</button>
                 </div>
             </div>
-            <div>
+            <div class="input-espaciado">
                 <h5>ESPACIADO</h5>
-                <input type="number" id="text-spacing" name="text-spacing" value="35">
+                <input type="number" id="text-spacing" name="text-spacing" value="35" class="input-font-size">
             </div>
             <div>
                 <h5>INTERLINEADO</h5>
                 <div class="style-filter">
                     <label>
-                        <select name="line-spacing" id="line-spacing">
+                        <select name="line-spacing" id="line-spacing" class="text-style w-input-small">
                             <option value="0.8">0.8</option>
                             <option value="1">1</option>
                             <option value="1.2">1.2</option>

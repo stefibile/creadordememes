@@ -16,6 +16,10 @@ h1 {
     margin-top: 10px;
 }
 
+h2 {
+    font-size: 40px;
+}
+
 h3 {
     font-family: 'Open Sans', sans-serif;
     font-size: 18px;
@@ -186,6 +190,7 @@ select:focus {
 .style-filter {
     position: relative;
     float: left;
+    width: 100%;
 }
 
 .style-filter:after {
@@ -214,7 +219,7 @@ select:focus {
     height: 30px;
     float: right;
     margin: 5px 0px;
-    padding: 0px 24px;
+    padding: 0px 10px;
     font-size: 14px;
     line-height: 1.75;
     color: #FFFFFF;
@@ -287,6 +292,7 @@ input[type=range]::-webkit-slider-thumb {
     display: flex;
     flex-direction: row;
     gap: 5px;
+    align-items: center;
 }
 
 .text-checkbox {
@@ -316,6 +322,10 @@ input[type=range]::-webkit-slider-thumb {
     border-radius: 5px;
 }
 
+.text-style:hover {
+    background-color: #5a5d68;
+}
+
 .text-style-contorn {
     display: flex;
     justify-content: center;
@@ -332,16 +342,90 @@ input[type=range]::-webkit-slider-thumb {
     margin: 3px;
 }
 
+.text-style-contorn:hover {
+    background-color: #5a5d68;
+}
+
 .div-contorn {
     display: flex;
+    margin-top: 5px;
 }
 
 .button-style {
     display: flex;
-    gap: 10px;
+    gap: 5px;
 }
 
 .font-style {
     display: flex;
     flex-direction: column;
 }
+
+.div-font-style {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-font-size {
+    background-color: #3a404b;
+    border: none;
+    border-radius: 4px;
+    height: 35px;
+    color: #FFFFFF;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    padding: 0 10px;
+
+}
+.w50 {
+    width: 50%;
+}
+
+.input-espaciado {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-font-size:hover {
+    background-color: #5a5d68;
+}
+
+.div-font-size{
+    display: flex;
+    gap: 10px;
+}
+
+.div-color-internal {
+    display: flex;
+    flex-direction: column;
+}
+.div-color {
+    display: flex;
+}
+
+textarea {
+    color: #FFFFFF;
+}
+
+textarea::placeholder {
+    font-size: 15px;
+    color: #FFFFFF;
+}
+
+textarea:focus {
+    background-color: #5a5d68;
+    outline: none;
+}
+
+input:focus {
+    background-color: #5a5d68;
+    outline: none;
+}
+textarea:hover {
+    background-color: #5a5d68;
+}
+
+
+
+
