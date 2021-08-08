@@ -12,27 +12,27 @@
 
 <body>
 
-    <header>
+    <header id="header">
         <div class="container">
             <h1>Generador de Memes</h1>
-            <ul class="nav">
-                <li class="nav-item">
+            <div class="nav">
+                <button class="nav-item" id="asideImageButton">
                     <i class="icon fas fa-file-image"></i>
                     <h4>Imagen</h4>
-                </li>
-                <li class="nav-item"></li>
-                <i class="icon fas fa-font"></i>
-                <h4>Texto</h4>
-                </li>
-                <li class="nav-item"></li>
-                <i class="icon far fa-lightbulb"></i>
-                <h4>Modo oscuro</h4>
-                </li>
-            </ul>
+                </button>
+                <button id="asideTextButton" class="nav-item">
+                    <i class="icon fas fa-font"></i>
+                    <h4>Texto</h4>
+                </button>
+                <button id="light-mode" class="nav-item">
+                    <i class="icon far fa-lightbulb"></i>
+                    <h4>Modo oscuro</h4>
+                </button>
+            </div>
         </div>
     </header>
 
-    <main>
+    <main id="main">
         <div class="container">
             <div class="meme-text">
                 <h2>TOP TEXT</h2>
@@ -46,79 +46,81 @@
         </div>
 
         <button class="download-meme">
-            <i class="icon fas fa-download"></i></i>
-            <h4>Descargar meme</h4>
+            <i class="icon-download fas fa-download"></i></i>
+            <span>Descargar meme</span>
         </button>
 
     </main>
 
-    <aside class="aside">
-        <!-- <form class="image-aside">
+    <aside class="aside" id="aside">
+        <form id="image-aside" class="image-aside">
             <h3>IMAGEN</h3>
             <div>
                 <h5>URL</h5>
-                <input class="input-url" type="text">
+                <input id="input-url-imagen" class="input-url" type="text">
             </div>
             <div>
-            <h5>FONDO</h5>
+                <h5>FONDO</h5>
                 <div class="div-filtros">
-                    <div class="style-filter-color">
-                    <input class="button-color" type="color" value="#ffffff">
-                    <span>#FFFFFF</span>
+                    <div class="style-filter-color" id="input-bg">
+                        <input class="button-color" type="color" value="#ffffff">
+                        <span>#FFFFFF</span>
                     </div>
                     <div class="style-filter">
-                    <label>
-                      <select name="background-style" id=" ">
-                      <option class="style-image" value="ninguno">Ninguno</option>
-                     <option value="aclarar">Aclarar</option>
-                     <option value="oscurecer">Oscurecer</option>
-                     <option value="diferencia">Diferencia</option>
-                     <option value="luminosidad">Luminosidad</option>
-                     <option value="multiplicar">Multiplicar</option>      
-                     </select>
-                     </label>
-                     </div>    
+                        <label>
+                            <select name="background-style" id="input-layer">
+                                <option class="style-image" value="ninguno">Ninguno</option>
+                                <option value="aclarar">Aclarar</option>
+                                <option value="oscurecer">Oscurecer</option>
+                                <option value="diferencia">Diferencia</option>
+                                <option value="luminosidad">Luminosidad</option>
+                                <option value="multiplicar">Multiplicar</option>
+                            </select>
+                        </label>
+                    </div>
                 </div>
             </div>
             <div>
                 <h5>FILTROS</h5>
-                <label>BRILLO 
+                <label>BRILLO
                     <input id="brillo" type="range" min="0" max="1">
                 </label>
                 <label>OPACIDAD
                     <input id="opacidad" type="range" min="0" max="1">
-                </label>           
+                </label>
                 <label>CONTRASTE
                     <input id="contraste" type="range" min="100%" max="1000%">
-                </label>            
+                </label>
                 <label>DESENFOQUE
                     <input id="desenfoque" type="range" min="0" max="10px">
-                </label>            
+                </label>
                 <label>ESCALA DE GRISES
                     <input id="escala-de-grises" type="range" min="0" max="100%">
-                </label>   
+                </label>
                 <label>SEPIA
                     <input id="sepia" type="range" min="0" max="100%">
-                </label>                
+                </label>
                 <label>HUE
                     <input id="hue" type="range" min="0deg" max="359deg">
-                </label>       
+                </label>
                 <label>SATURADO
                     <input id="saturado" type="range" min="100%" max="1000%">
-                </label>            
+                </label>
                 <label>NEGATIVO
                     <input id="negativo" type="range" min="0" max="1">
-                </label>            
+                </label>
             </div>
-            <button type="reset" class="reset-button"><h4>Restablecer filtros</h4></button>   
-        </form> -->
+            <button id="button-reset" type="reset" class="reset-button">
+                <h4>Restablecer filtros</h4>
+            </button>
+        </form>
 
-        <form class="image-aside">
+        <form id="text-aside" class="text-aside ocultar">
             <h3>TEXTO</h3>
             <div class="style-filter-text">
                 <h5>SUPERIOR</h5>
                 <label>
-                    <textarea name="text-area" placeholder="TOP TEXT" class="input-text" id="" cols="7"
+                    <textarea name="text-area" placeholder="TOP TEXT" class="input-text" id="input-top-text" cols="7"
                         rows="2"></textarea>
                 </label>
 
@@ -131,7 +133,7 @@
             <div class="style-filter-text">
                 <h5>INFERIOR</h5>
                 <label>
-                    <textarea name="text-area" placeholder="BOTTOM TEXT" class="input-text" id="" cols="7"
+                    <textarea name="text-area" placeholder="BOTTOM TEXT" class="input-text" id="input-bottom-text" cols="7"
                         rows="2"></textarea>
                 </label>
 
@@ -147,7 +149,7 @@
                 <h5>FUENTE</h5>
                 <div class="style-filter">
                     <label>
-                        <select name="font-style" id="font-selector" class="text-style">
+                        <select name="font-style" id="input-select" class="text-style">
                             <option value="arial">Arial</option>
                             <option value="arial-black">Arial Black</option>
                             <option value="american-typewriter">American Typewriter</option>
@@ -157,20 +159,20 @@
                             <option value="impact">Impact</option>
                             <option value="verdana">Verdana</option>
                             <option value="times-new-roman">Times New Roman</option>
-                            </select>
+                        </select>
                     </label>
                 </div>
             </div>
             <div class="div-font-size">
-                <input type="number" id="font-size" class="input-font-size w50" name="font-size" value="40">
+                <input type="number" id="input-font-size" class="input-font-size w50" name="font-size" value="40">
                 <div class="button-style">
-                    <button class="text-style">
+                    <button class="text-style" id="align-left">
                         <i class="icon fas fa-align-left"></i>
                     </button>
-                    <button class="text-style">
+                    <button class="text-style" id="align-center">
                         <i class="icon fas fa-align-center"></i>
                     </button>
-                    <button class="text-style">
+                    <button class="text-style" id="align-right">
                         <i class="icon fas fa-align-right"></i>
                     </button>
                 </div>
@@ -178,41 +180,41 @@
             <div class="div-color">
                 <div>
                     <h5>COLOR</h5>
-                    <div class="style-filter-color">
+                    <div class="style-filter-color" id="input-color">
                         <input class="button-color" type="color" value="#000000">
                         <span>#000000</span>
                     </div>
                 </div>
                 <div>
                     <h5>FONDO</h5>
-                    <div class="style-filter-color">
+                    <div class="style-filter-color"  id="input-bgcolor">
                         <input class="button-color" type="color" value="#000000">
                         <span>#000000</span>
                     </div>
                 </div>
-            </div>
-                <div class="div-text-checkbox">
+                <div class="div-text-checkbox mt-0">
                     <input type="checkbox" class="checkbox" name="text-transparent" id="transparence-text">
                     <label class="text-checkbox">Fondo Transparente</label>
                 </div>
-            
+            </div>
+
             <div>
                 <h5>CONTORNO</h5>
                 <div class="div-contorn">
-                    <button class="text-style-contorn">Ninguno</button>
-                    <button class="text-style-contorn">Claro</button>
-                    <button class="text-style-contorn">Oscuro</button>
+                    <button id="input-none-contorn" class="text-style-contorn">Ninguno</button>
+                    <button id="input-light-contorn" class="text-style-contorn">Claro</button>
+                    <button id="input-dark-contorn" class="text-style-contorn">Oscuro</button>
                 </div>
             </div>
             <div class="input-espaciado">
                 <h5>ESPACIADO</h5>
-                <input type="number" id="text-spacing" name="text-spacing" value="35" class="input-font-size">
+                <input type="number" id="input-text-spacing" name="text-spacing" value="35" class="input-font-size">
             </div>
             <div>
                 <h5>INTERLINEADO</h5>
                 <div class="style-filter">
                     <label>
-                        <select name="line-spacing" id="line-spacing" class="text-style w-input-small">
+                        <select name="line-spacing" id="input-line-spacing" class="text-style w-input-small">
                             <option value="0.8">0.8</option>
                             <option value="1">1</option>
                             <option value="1.2">1.2</option>
