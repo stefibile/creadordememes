@@ -26,6 +26,7 @@ const inputLightContorn = document.getElementById ("input-light-contorn")
 const inputDarkContorn = document.getElementById ("input-dark-contorn")
 const inputTextSpacing = document.getElementById ("input-text-spacing")
 const inputLineSpacing = document.getElementById ("input-line-spacing")
+const memeImage = document.getElementById("meme-image")
 
 
 
@@ -71,7 +72,9 @@ asideImageButton.onclick = () => {
     asideImage.classList.remove ("ocultar")
 }
 
-
+inputUrlImagen.onchange = () => {
+    memeImage.setAttribute("src", inputUrlImagen.value)
+}
 
 
 //    let aside = document.getElementById ("text-aside")

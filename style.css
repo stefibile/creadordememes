@@ -103,11 +103,27 @@ body {
         align-items: center;
         justify-content: center;
     }
+    
+    .bottom {
+        position: absolute;
+        bottom: 0;
+    }
+
+    .top {
+        position: absolute;
+        top: 0;
+    }
 
     .image-container {
         width: 610px;
-        height: 375px;
+        height: 615px;
         background-color: #000000;
+    }
+
+    .image-container img {
+        object-fit: cover;
+        width: 610px;
+        height: 100%;
     }
 
     .image-aside {
@@ -119,6 +135,11 @@ body {
         display: flex;
         flex-direction: column;
         gap: 20px;
+    }
+
+    .div-height {
+        height: 615px;
+        position: absolute;
     }
 
     .download-meme {
@@ -130,6 +151,9 @@ body {
         padding: 12px;
         border-radius: 3px;
         border: none;
+        position: absolute;
+        cursor: pointer;
+        top: 790px;
     }
 
     .aside {
