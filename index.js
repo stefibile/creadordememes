@@ -1,5 +1,6 @@
 let header = document.getElementById ("header")
 let botonModoOscuro = document.getElementById ("light-mode")
+const image = document.getElementById ("meme-image")
 const main = document.getElementById ("main")
 const todosLosHeadings = document.querySelectorAll("h1, h3, h4, h5, h6, label, .icon")
 const headings = Array.from(todosLosHeadings)
@@ -28,7 +29,7 @@ const inputTextSpacing = document.getElementById ("input-text-spacing")
 const inputLineSpacing = document.getElementById ("input-line-spacing")
 const memeImage = document.getElementById("meme-image")
 
-
+// Modo Oscuro
 
 botonModoOscuro.onclick = () => {
     header.classList.toggle ("light-mode")
@@ -54,13 +55,13 @@ botonModoOscuro.onclick = () => {
     inputLineSpacing.classList.toggle ("bg-white")
 
 
-    for (let i = 0; i <= todosLosHeadings.length; i++) {
+    for (let i = 0; i < todosLosHeadings.length; i++) {
         headings[i].classList.toggle ("light-text")
     }
 
 }
 
-
+// Asides desplegables
 
 asideTextButton.onclick = () => {
     asideText.classList.remove ("ocultar")
@@ -72,35 +73,54 @@ asideImageButton.onclick = () => {
     asideImage.classList.remove ("ocultar")
 }
 
+
+// Filtros de imagen
+
 inputUrlImagen.onchange = () => {
     memeImage.setAttribute("src", inputUrlImagen.value)
 }
 
+const darBrillo = () => {
+    brillo = document.getElementById ("brillo").value
+    image.style.filter = "brightness(" + brillo + "%)"
+}
 
-//    let aside = document.getElementById ("text-aside")
-//   let botonDeCambio = document.getElementById ("shown-aside")
+const darOpacidad = () => {
+    opacidad = document.getElementById ("opacidad").value
+    image.style.filter = "opacity(" + opacidad + "%)"
+}
 
-//    let mostrarAsideTexto = () => {
-//        aside.style.display = "block"
-//   }
+const darContraste = () => {
+    contraste = document.getElementById ("contraste").value
+    image.style.filter = "contrast(" + contraste + "%)"
+}
 
-//   botonDeCambio.onclick = mostrarAsideTexto
+const darDesenfoque = () => {
+    desenfoque = document.getElementById ("desenfoque").value
+    image.style.filter = "blur(" + desenfoque + "px)"
+}
 
-//   let asideImagen = document.getElementById ("form-text")
-//    let botonDeCambioImagen = document.getElementById ("mostrar-imagen")
+const darEscalaDeGrises = () => {
+    escalaDeGrises = document.getElementById ("escala-de-grises").value
+    image.style.filter = "grayscale(" + escalaDeGrises + "%)"
+}
 
-//   let mostrarImagen = () => {
-//        asideImagen.style.display = "none"
-//   }
+const darSepia = () => {
+    sepia = document.getElementById ("sepia").value
+    image.style.filter = "sepia(" + sepia + "%)"
+}
 
-//   botonDeCambioImagen.onclick = mostrarImagen
+const darHue = () => {
+    hue = document.getElementById ("hue").value
+    image.style.filter = "hue-rotate(" + hue + "deg)"
+}
 
-//  let abrirAsideTexto = document.getElementById("mostrar-imagen")
-//  let imageAside = document.querySelector(".image-aside")
+const darSaturado = () => {
+    saturado = document.getElementById ("saturado").value
+    image.style.filter = "saturate(" + saturado + "%)"
+}
 
-// abrirAsideTexto.onclick = () => {
-//      imageAside.classList.toggle("ocultar")
-//  }
-
-
-
+const darNegativo = () => {
+    negativo = document.getElementById ("negativo").value
+    image.style.filter = "invert(" + negativo + ")"
+}

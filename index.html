@@ -83,31 +83,31 @@
             <div>
                 <h5>FILTROS</h5>
                 <label>BRILLO
-                    <input id="brillo" type="range" min="0" max="1">
+                    <input id="brillo" type="range" min="0" max="200" oninput="darBrillo()">
                 </label>
                 <label>OPACIDAD
-                    <input id="opacidad" type="range" min="0" max="1">
+                    <input id="opacidad" type="range" min="0" max="100" value="100" oninput="darOpacidad()">
                 </label>
                 <label>CONTRASTE
-                    <input id="contraste" type="range" min="100%" max="1000%">
+                    <input id="contraste" type="range" min="100" max="1000" value="0" oninput="darContraste()">
                 </label>
                 <label>DESENFOQUE
-                    <input id="desenfoque" type="range" min="0" max="10px">
+                    <input id="desenfoque" type="range" min="0" max="10px" value="0" oninput="darDesenfoque()">
                 </label>
                 <label>ESCALA DE GRISES
-                    <input id="escala-de-grises" type="range" min="0" max="100%">
+                    <input id="escala-de-grises" type="range" min="0" max="100" value="0" oninput="darEscalaDeGrises()">
                 </label>
                 <label>SEPIA
-                    <input id="sepia" type="range" min="0" max="100%">
+                    <input id="sepia" type="range" min="0" max="100" value="0" oninput="darSepia()">
                 </label>
                 <label>HUE
-                    <input id="hue" type="range" min="0deg" max="359deg">
+                    <input id="hue" type="range" min="0" max="359" value="0" oninput="darHue()">
                 </label>
                 <label>SATURADO
-                    <input id="saturado" type="range" min="100%" max="1000%">
+                    <input id="saturado" type="range" min="100" max="1000" value="0" oninput="darSaturado()">
                 </label>
                 <label>NEGATIVO
-                    <input id="negativo" type="range" min="0" max="1">
+                    <input id="negativo" type="range" min="0" max="1" value="0" oninput="darNegativo()">
                 </label>
             </div>
             <button id="button-reset" type="reset" class="reset-button">
