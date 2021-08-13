@@ -124,3 +124,49 @@ const darNegativo = () => {
     negativo = document.getElementById ("negativo").value
     image.style.filter = "invert(" + negativo + ")"
 }
+
+// Reemplazo de textos
+
+const getTopText = () => {
+    topText = document.getElementById ("input-top-text").value
+    topTextContainer = document.getElementById ("top-text-container")
+    topTextContainer.innerHTML = topText
+}
+
+const getBottomText = () => {
+    bottomText = document.getElementById ("input-bottom-text").value
+    bottomTextContainer = document.getElementById ("bottom-text-container")
+    bottomTextContainer.innerHTML = bottomText
+}
+
+// Reemplazo de color de texto y fondo textos
+
+const getBackgroundColor = () => {
+    inputColorPicker = document.getElementById ("background-color-picker").value.toUpperCase()
+    textContainers = document.querySelectorAll (".meme-text")
+    textBackgroundValue = document.getElementById ("background-color-value")
+    for (let i = 0; i < textContainers.length; i++) {
+        textContainers[i].style.backgroundColor = inputColorPicker
+    }
+    textBackgroundValue.innerHTML = inputColorPicker
+}
+
+const getColorText = () => {
+    inputColorPickerText = document.getElementById ("text-color-picker").value.toUpperCase()
+    textColors = document.querySelectorAll (".box-text-color")
+    textColorValue = document.getElementById ("text-color-value")
+    for (let i = 0; i < textColors.length; i++) {
+        textColors[i].style.color = inputColorPickerText
+    }
+    textColorValue.innerHTML = inputColorPickerText
+}
+
+// reemplazo color de fondo imagen 
+
+const getImageBackgroundColor = () => {
+    inputImageBackgroundcolor = document.getElementById ("image-color-picker").value.toUpperCase()
+    colorBackgroundImage = document.getElementById ("figure-color")
+    colorBackgroundImage.style.backgroundColor = inputImageBackgroundcolor
+    figureColorValue = document.getElementById ("figure-color-value")
+    figureColorValue.innerHTML = inputImageBackgroundcolor
+}

@@ -34,14 +34,14 @@
 
     <main id="main">
         <div class="container div-height">
-            <div class="meme-text top">
-                <h2>TOP TEXT</h2>
+            <div class="meme-text top" id="top-box">
+                <h2 id="top-text-container" class="box-text-color">TOP TEXT</h2>
             </div>
-            <figure class="image-container">
+            <figure class="image-container" id="figure-color">
                 <img id="meme-image" alt="imagen de meme aleatoria">
             </figure>
-            <div class="meme-text bottom">
-                <h2>BOTTOM TEXT</h2>
+            <div class="meme-text bottom" id="bottom-box">
+                <h2 id="bottom-text-container" class="box-text-color">BOTTOM TEXT</h2>
             </div>
         </div>
 
@@ -63,8 +63,8 @@
                 <h5>FONDO</h5>
                 <div class="div-filtros">
                     <div class="style-filter-color" id="input-bg">
-                        <input class="button-color" type="color" value="#ffffff">
-                        <span>#FFFFFF</span>
+                        <input class="button-color" type="color" value="#ffffff" id="image-color-picker" oninput="getImageBackgroundColor()">
+                        <span id="figure-color-value">#FFFFFF</span>
                     </div>
                     <div class="style-filter">
                         <label>
@@ -89,7 +89,7 @@
                     <input id="opacidad" type="range" min="0" max="100" value="100" oninput="darOpacidad()">
                 </label>
                 <label>CONTRASTE
-                    <input id="contraste" type="range" min="100" max="1000" value="0" oninput="darContraste()">
+                    <input id="contraste" type="range" min="0" max="200" value="100" oninput="darContraste()">
                 </label>
                 <label>DESENFOQUE
                     <input id="desenfoque" type="range" min="0" max="10px" value="0" oninput="darDesenfoque()">
@@ -107,7 +107,7 @@
                     <input id="saturado" type="range" min="100" max="1000" value="0" oninput="darSaturado()">
                 </label>
                 <label>NEGATIVO
-                    <input id="negativo" type="range" min="0" max="1" value="0" oninput="darNegativo()">
+                    <input id="negativo" type="range" min="0" max="1" value="0" step="0.1" oninput="darNegativo()">
                 </label>
             </div>
             <button id="button-reset" type="reset" class="reset-button">
@@ -121,7 +121,7 @@
                 <h5>SUPERIOR</h5>
                 <label>
                     <textarea name="text-area" placeholder="TOP TEXT" class="input-text" id="input-top-text" cols="7"
-                        rows="2"></textarea>
+                        rows="2" oninput="getTopText()"></textarea>
                 </label>
 
                 <div class="div-text-checkbox">
@@ -134,7 +134,7 @@
                 <h5>INFERIOR</h5>
                 <label>
                     <textarea name="text-area" placeholder="BOTTOM TEXT" class="input-text" id="input-bottom-text" cols="7"
-                        rows="2"></textarea>
+                        rows="2" oninput="getBottomText()"></textarea>
                 </label>
 
                 <div class="div-text-checkbox">
@@ -181,15 +181,15 @@
                 <div>
                     <h5>COLOR</h5>
                     <div class="style-filter-color" id="input-color">
-                        <input class="button-color" type="color" value="#000000">
-                        <span>#000000</span>
+                        <input class="button-color" type="color" value="#000000" id="text-color-picker" oninput="getColorText()">
+                        <span id="text-color-value">#000000 </span>
                     </div>
                 </div>
                 <div>
                     <h5>FONDO</h5>
                     <div class="style-filter-color"  id="input-bgcolor">
-                        <input class="button-color" type="color" value="#000000">
-                        <span>#000000</span>
+                        <input class="button-color" type="color" value="#FFFFFF" id="background-color-picker" oninput="getBackgroundColor()">
+                        <span id="background-color-value">#FFFFFF </span>
                     </div>
                 </div>
                 <div class="div-text-checkbox mt-0">
