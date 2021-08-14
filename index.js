@@ -170,3 +170,113 @@ const getImageBackgroundColor = () => {
     figureColorValue = document.getElementById ("figure-color-value")
     figureColorValue.innerHTML = inputImageBackgroundcolor
 }
+
+// ocultar cajas de texto en meme
+
+const ocultarParteSuperior = () => {
+    topBox = document.getElementById ("top-box")
+    topBox.classList.toggle ("ocultar")
+}
+
+const ocultarParteInferior = () => {
+    bottomBox = document.getElementById("bottom-box")
+    bottomBox.classList.toggle ("ocultar")
+}
+
+// cambiar tipografias
+
+const selectFont = () => {
+    fontSelector = document.getElementById ("input-select").value
+    memeText = document.querySelectorAll ("#top-text-container, #bottom-text-container")
+    for (let i = 0; i < memeText.length; i++) {
+        memeText[i].style.fontFamily = fontSelector
+    }
+}
+
+// fondo transparente 
+
+const selectTransparent = () => {
+    textBox = document.querySelectorAll ("#top-box, #bottom-box")
+    for (let i = 0; i < textBox.length; i++) {
+        textBox[i].classList.toggle ("transparent-selector")
+    }
+}
+
+// tamaño de fuente 
+
+const fontSizeSelector = () => {
+    fontValue = document.getElementById ("input-font-size").value
+    fontSizeBox = document.querySelectorAll ("#top-text-container, #bottom-text-container")
+    for (let i = 0; i < fontSizeBox.length; i++) {
+        fontSizeBox[i].style.fontSize = (fontValue + "px")
+    }
+}
+
+//espaciado de texto
+
+const fontSpacing = () => {
+    fontSpacingValue = document.getElementById("input-text-spacing").value
+    spacingOfText = document.querySelectorAll ("#top-text-container, #bottom-text-container") 
+    for (let i = 0; i < spacingOfText.length; i++) {
+        spacingOfText[i].style.letterSpacing = (fontSpacingValue + "px")
+    }
+}
+
+// alineado de textos
+
+const alignToLeft = () => {
+    fontAlign = document.querySelectorAll ("#top-text-container, #bottom-text-container")
+    for (let i = 0; i < fontAlign.length; i++) {
+        fontAlign[i].style.textAlign = "left"
+    }
+}
+
+const alignToCenter = () => {
+    fontAlign = document.querySelectorAll ("#top-text-container, #bottom-text-container")
+    for (let i = 0; i < fontAlign.length; i++) {
+        fontAlign[i].style.textAlign = "center"
+    }
+}
+
+const alignToRight = () => {
+    fontAlign = document.querySelectorAll ("#top-text-container, #bottom-text-container")
+    for (let i = 0; i < fontAlign.length; i++) {
+        fontAlign[i].style.textAlign = "right"
+    }
+}
+
+// cambiar interlineado
+
+const lineSpacingValue = () => {
+    lineSpacingSelector = document.getElementById ("input-line-spacing").value
+    fontSpacingSelector = document.querySelectorAll ("#top-text-container, #bottom-text-container")
+    for (let i = 0; i < fontSpacingSelector.length; i++) {
+        fontSpacingSelector[i].style.lineHeight = lineSpacingSelector
+    }
+}
+
+// cambiar contorno tipografias 
+
+const textShadowNone = () => {
+    textShadowValue = document.querySelectorAll ("#top-text-container, #bottom-text-container")
+    for (let i = 0; i < textShadowValue.length; i++) {
+        textShadowValue[i].style.textShadow = "none"
+    }
+}
+
+const textShadowLight = () => {
+    textShadowValue = document.querySelectorAll ("#top-text-container, #bottom-text-container")
+    for (let i = 0; i < textShadowValue.length; i++) {
+        textShadowValue[i].style.textShadow = "1px 1px 1.5px"
+    }
+}
+
+const textShadowDark = () => {
+    textShadowValue = document.querySelectorAll ("#top-text-container, #bottom-text-container")
+    for (let i = 0; i < textShadowValue.length; i++) {
+        textShadowValue[i].style.textShadow = "3px 3px 3px"
+    }
+}
+
+
+

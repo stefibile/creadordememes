@@ -35,13 +35,13 @@
     <main id="main">
         <div class="container div-height">
             <div class="meme-text top" id="top-box">
-                <h2 id="top-text-container" class="box-text-color">TOP TEXT</h2>
+                <h2 id="top-text-container" class="box-text-color font-selector">TOP TEXT</h2>
             </div>
             <figure class="image-container" id="figure-color">
                 <img id="meme-image" alt="imagen de meme aleatoria">
             </figure>
             <div class="meme-text bottom" id="bottom-box">
-                <h2 id="bottom-text-container" class="box-text-color">BOTTOM TEXT</h2>
+                <h2 id="bottom-text-container" class="box-text-color font-selector">BOTTOM TEXT</h2>
             </div>
         </div>
 
@@ -126,7 +126,7 @@
 
                 <div class="div-text-checkbox">
                     <input type="checkbox" class="checkbox" name="image-text-sup" id="image-text-sup"
-                        value="image-text-sup">
+                        value="image-text-sup" oninput="ocultarParteSuperior()">
                     <label class="text-checkbox">Sin texto en la parte superior</label>
                 </div>
             </div>
@@ -139,7 +139,7 @@
 
                 <div class="div-text-checkbox">
                     <input type="checkbox" class="checkbox" name="image-text-bottom" id="image-text-bottom"
-                        value="image-text-bottom">
+                        value="image-text-bottom" oninput="ocultarParteInferior()">
                     <label class="text-checkbox">Sin texto en la parte inferior</label>
                 </div>
 
@@ -149,32 +149,32 @@
                 <h5>FUENTE</h5>
                 <div class="style-filter">
                     <label>
-                        <select name="font-style" id="input-select" class="text-style">
-                            <option value="arial">Arial</option>
-                            <option value="arial-black">Arial Black</option>
-                            <option value="american-typewriter">American Typewriter</option>
-                            <option value="andale-mono">Andale Mono</option>
-                            <option value="comic-sans-ms">Comic Sans MS</option>
-                            <option value="helvetica">Helvetica</option>
-                            <option value="impact">Impact</option>
-                            <option value="verdana">Verdana</option>
-                            <option value="times-new-roman">Times New Roman</option>
-                        </select>
+                        <select name="font-style" id="input-select" class="text-style" onchange="selectFont()" >
+                            <option value="Arial">Arial</option>
+                            <option value="Arial Black">Arial Black</option>
+                            <option value="American Typewriter, serif">American Typewriter</option>
+                            <option value="Andale Mono, monospace">Andale Mono</option>
+                            <option value="Comic Sans MS, Comic Sans, cursive">Comic Sans MS</option>
+                            <option value="Helvetica">Helvetica</option>
+                            <option value="Impact">Impact</option>
+                            <option value="Verdana">Verdana</option>
+                            <option value="Times, Times New Roman, serif">Times New Roman</option>
+                        </select> 
                     </label>
                 </div>
             </div>
             <div class="div-font-size">
-                <input type="number" id="input-font-size" class="input-font-size w50" name="font-size" value="40">
+                <input type="number" id="input-font-size" class="input-font-size w50" name="font-size" value="40" oninput="fontSizeSelector()">
                 <div class="button-style">
-                    <button class="text-style" id="align-left">
+                    <div class="align-style" id="align-left" onclick="alignToLeft()">
                         <i class="icon fas fa-align-left"></i>
-                    </button>
-                    <button class="text-style" id="align-center">
+                    </div>
+                    <div class="align-style" id="align-center" onclick="alignToCenter()">
                         <i class="icon fas fa-align-center"></i>
-                    </button>
-                    <button class="text-style" id="align-right">
+                    </div>
+                    <div class="align-style" id="align-right" onclick="alignToRight()">
                         <i class="icon fas fa-align-right"></i>
-                    </button>
+                    </div>
                 </div>
             </div>
             <div class="div-color">
@@ -193,7 +193,7 @@
                     </div>
                 </div>
                 <div class="div-text-checkbox mt-0">
-                    <input type="checkbox" class="checkbox" name="text-transparent" id="transparence-text">
+                    <input type="checkbox" class="checkbox" name="text-transparent" id="transparence-text" onchange="selectTransparent()">
                     <label class="text-checkbox">Fondo Transparente</label>
                 </div>
             </div>
@@ -201,20 +201,20 @@
             <div>
                 <h5>CONTORNO</h5>
                 <div class="div-contorn">
-                    <button id="input-none-contorn" class="text-style-contorn">Ninguno</button>
-                    <button id="input-light-contorn" class="text-style-contorn">Claro</button>
-                    <button id="input-dark-contorn" class="text-style-contorn">Oscuro</button>
+                    <div id="input-none-contorn" onclick="textShadowNone()" class="text-style-contorn">Ninguno</div>
+                    <div id="input-light-contorn"onclick="textShadowLight()" class="text-style-contorn">Claro</div>
+                    <div id="input-dark-contorn" onclick="textShadowDark()" class="text-style-contorn">Oscuro</div>
                 </div>
             </div>
             <div class="input-espaciado">
                 <h5>ESPACIADO</h5>
-                <input type="number" id="input-text-spacing" name="text-spacing" value="35" class="input-font-size">
+                <input type="number" id="input-text-spacing" name="text-spacing" value="35" class="input-font-size" oninput="fontSpacing()">
             </div>
             <div>
                 <h5>INTERLINEADO</h5>
                 <div class="style-filter">
                     <label>
-                        <select name="line-spacing" id="input-line-spacing" class="text-style w-input-small">
+                        <select name="line-spacing" id="input-line-spacing" class="text-style w-input-small" onchange="lineSpacingValue()">
                             <option value="0.8">0.8</option>
                             <option value="1">1</option>
                             <option value="1.2">1.2</option>
