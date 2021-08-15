@@ -1,128 +1,61 @@
-let header = document.getElementById ("header")
-let botonModoOscuro = document.getElementById ("light-mode")
-const image = document.getElementById ("meme-image")
-const main = document.getElementById ("main")
-const todosLosHeadings = document.querySelectorAll("h1, h3, h4, h5, h6, label, .icon")
-const headings = Array.from(todosLosHeadings)
+
+// Modo Oscuro
+const botonModoOscuro = document.getElementById ("light-mode")
+const body = document.getElementById ("body")
+
+botonModoOscuro.onclick = () => {
+    body.classList.toggle ("light-mode")
+}
+
+// Asides desplegables
 const aside = document.getElementById ("aside")
 const asideText = document.getElementById ("text-aside")
 const asideImage = document.getElementById ("image-aside")
 const asideTextButton = document.getElementById ("asideTextButton")
 const asideImageButton = document.getElementById ("asideImageButton")
-const botonReset = document.getElementById ("button-reset")
-const inputUrlImagen = document.getElementById ("input-url-imagen")
-const inputBg = document.getElementById ("input-bg")
-const inputLayer = document.getElementById ("input-layer")
-const inputTopText = document.getElementById ("input-top-text")
-const inputBottomText = document.getElementById ("input-bottom-text")
-const inputSelect = document.getElementById ("input-select")
-const inputFontSize = document.getElementById ("input-font-size")
-const alignLeft = document.getElementById ("align-left")
-const alignCenter = document.getElementById ("align-center")
-const alignRight = document.getElementById ("align-right")
-const inputColor = document.getElementById ("input-color")
-const inputBgColor = document.getElementById ("input-bgcolor")
-const inputNoneContorn = document.getElementById ("input-none-contorn")
-const inputLightContorn = document.getElementById ("input-light-contorn")
-const inputDarkContorn = document.getElementById ("input-dark-contorn")
-const inputTextSpacing = document.getElementById ("input-text-spacing")
-const inputLineSpacing = document.getElementById ("input-line-spacing")
-const memeImage = document.getElementById("meme-image")
-
-// Modo Oscuro
-
-botonModoOscuro.onclick = () => {
-    header.classList.toggle ("light-mode")
-    main.classList.toggle ("light-main")
-    aside.classList.toggle ("light-aside")
-    botonReset.classList.toggle ("bg-white")
-    inputUrlImagen.classList.toggle ("bg-white")
-    inputBg.classList.toggle ("bg-white")
-    inputLayer.classList.toggle ("bg-white")
-    inputTopText.classList.toggle ("bg-white")
-    inputBottomText.classList.toggle ("bg-white")
-    inputSelect.classList.toggle ("bg-white")
-    inputFontSize.classList.toggle ("bg-white")
-    alignLeft.classList.toggle ("bg-white")
-    alignCenter.classList.toggle ("bg-white")
-    alignRight.classList.toggle ("bg-white")
-    inputColor.classList.toggle ("bg-white")
-    inputBgColor.classList.toggle ("bg-white")
-    inputNoneContorn.classList.toggle ("bg-white")
-    inputLightContorn.classList.toggle ("bg-white")
-    inputDarkContorn.classList.toggle ("bg-white")
-    inputTextSpacing.classList.toggle ("bg-white")
-    inputLineSpacing.classList.toggle ("bg-white")
-
-
-    for (let i = 0; i < todosLosHeadings.length; i++) {
-        headings[i].classList.toggle ("light-text")
-    }
-
-}
-
-// Asides desplegables
 
 asideTextButton.onclick = () => {
-    asideText.classList.remove ("ocultar")
-    asideImage.classList.add ("ocultar")
+    aside.style.display = "block"
+    asideText.classList.remove ("hide")
+    asideImage.classList.add ("hide")
+    asideTextButton.classList.add ("active")
+    asideImageButton.classList.remove ("active")
 }
 
 asideImageButton.onclick = () => {
-    asideText.classList.add ("ocultar")
-    asideImage.classList.remove ("ocultar")
+    aside.style.display = "block"
+    asideText.classList.add ("hide")
+    asideImage.classList.remove ("hide")
+    asideImageButton.classList.add ("active")
+    asideTextButton.classList.remove ("active")
 }
 
 
 // Filtros de imagen
 
+const image = document.getElementById ("figure")
+
+const inputUrlImagen = document.getElementById ("input-url-imagen")
+
 inputUrlImagen.onchange = () => {
-    memeImage.setAttribute("src", inputUrlImagen.value)
+    urlImagen = inputUrlImagen.value
+    image.style.backgroundImage = ("url(" + urlImagen + ")")
 }
 
-const darBrillo = () => {
+const actualizarFiltros = () => {
     brillo = document.getElementById ("brillo").value
-    image.style.filter = "brightness(" + brillo + "%)"
-}
-
-const darOpacidad = () => {
     opacidad = document.getElementById ("opacidad").value
-    image.style.filter = "opacity(" + opacidad + "%)"
-}
-
-const darContraste = () => {
     contraste = document.getElementById ("contraste").value
-    image.style.filter = "contrast(" + contraste + "%)"
-}
-
-const darDesenfoque = () => {
     desenfoque = document.getElementById ("desenfoque").value
-    image.style.filter = "blur(" + desenfoque + "px)"
-}
-
-const darEscalaDeGrises = () => {
     escalaDeGrises = document.getElementById ("escala-de-grises").value
-    image.style.filter = "grayscale(" + escalaDeGrises + "%)"
-}
-
-const darSepia = () => {
     sepia = document.getElementById ("sepia").value
-    image.style.filter = "sepia(" + sepia + "%)"
-}
-
-const darHue = () => {
     hue = document.getElementById ("hue").value
-    image.style.filter = "hue-rotate(" + hue + "deg)"
-}
-
-const darSaturado = () => {
     saturado = document.getElementById ("saturado").value
-    image.style.filter = "saturate(" + saturado + "%)"
-}
-
-const darNegativo = () => {
     negativo = document.getElementById ("negativo").value
-    image.style.filter = "invert(" + negativo + ")"
+
+    image.style.filter = "brightness(" + brillo + "%)" + "opacity(" + opacidad + "%)" +
+    "contrast(" + contraste + "%)" + "blur(" + desenfoque + "px)" + "grayscale(" + escalaDeGrises + "%)" +
+    "sepia(" + sepia + "%)" + "hue-rotate(" + hue + "deg)" + "saturate(" + saturado + "%)" + "invert(" + negativo + ")"
 }
 
 // Reemplazo de textos
@@ -165,7 +98,7 @@ const getColorText = () => {
 
 const getImageBackgroundColor = () => {
     inputImageBackgroundcolor = document.getElementById ("image-color-picker").value.toUpperCase()
-    colorBackgroundImage = document.getElementById ("figure-color")
+    colorBackgroundImage = document.getElementById ("figure")
     colorBackgroundImage.style.backgroundColor = inputImageBackgroundcolor
     figureColorValue = document.getElementById ("figure-color-value")
     figureColorValue.innerHTML = inputImageBackgroundcolor
@@ -173,14 +106,14 @@ const getImageBackgroundColor = () => {
 
 // ocultar cajas de texto en meme
 
-const ocultarParteSuperior = () => {
+const hideTopBox = () => {
     topBox = document.getElementById ("top-box")
-    topBox.classList.toggle ("ocultar")
+    topBox.classList.toggle ("hide")
 }
 
 const ocultarParteInferior = () => {
     bottomBox = document.getElementById("bottom-box")
-    bottomBox.classList.toggle ("ocultar")
+    bottomBox.classList.toggle ("hide")
 }
 
 // cambiar tipografias
@@ -278,5 +211,27 @@ const textShadowDark = () => {
     }
 }
 
+// Guardado de imágenes
 
+const downloadMeme = () => {
+    const meme = document.getElementById ("meme")
+    
+    domtoimage.toBlob(meme)
+    .then(function (blob) {
+        window.saveAs(blob, "el-meme-mas-buenardo.png");
+    });
+}
 
+//cerrar aside en responsive 
+
+const closeAside = () => {
+    aside.style.display = "none"
+}
+
+// Aclarar u oscurecer fondo imagen 
+
+const backgroungColorChanger = () => {
+    blendModeSelected = document.getElementById ("input-layer").value
+    layer = document.getElementById ("figure")
+    layer.style.backgroundBlendMode = blendModeSelected
+}

@@ -5,7 +5,7 @@
 
 
 body {
-    overflow: hidden;
+    overflow-y: scroll;
 }
 
 h1 {
@@ -56,7 +56,7 @@ header {
 
 main {
     background-color: #30343f;
-    height: 100vh;
+    height: 100%;
     padding-top: 20px;
     display: flex;
     flex-direction: column;
@@ -80,11 +80,12 @@ main {
     background: transparent;
     border: none;
     cursor: pointer;
+    margin: 0 5px;
 }
 
 .nav-item:hover {
     background-color: #5a5d68;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 .nav {
@@ -142,9 +143,10 @@ main {
     gap: 20px;
 }
 
-.div-height {
+.container.main {
     height: 615px;
-    position: absolute;
+    width: 610px;
+    position: relative;
 }
 
 .download-meme {
@@ -156,9 +158,8 @@ main {
     padding: 12px;
     border-radius: 3px;
     border: none;
-    position: absolute;
     cursor: pointer;
-    top: 790px;
+    margin-bottom: 20px;
 }
 
 .aside {
@@ -166,11 +167,11 @@ main {
     top: 0;
     right: 0;
     width: 260px;
-    height: 100%;
-    overflow-y: scroll;
+    height: calc(100% + 29px);
     background-color: #252935;
     flex-direction: column;
     padding: 30px 15px;
+    z-index: 2;
 }
 
 label {
@@ -440,7 +441,7 @@ input[type=range]::-webkit-slider-thumb {
     height: 36px;
     border: none;
     border-radius: 5px;
-    transition: background-color 0.2s;
+    cursor: pointer;
 }
 
 .align-style:hover {
@@ -516,27 +517,13 @@ textarea:hover {
     margin-top: 0;
 }
 
-/*  modo claro */
-
-.light-mode {
-    background-color: #e0e0e0;
-    color: #3a404b;
-}
-
-.light-main {
-    background-color: #eeeeee;
-}
-
-.light-text {
-    color: #3a404b;
-}
-
-.light-aside {
-    background-color: #fafafa;
-}
-
-.ocultar {
+.hide {
     display: none;
+}
+
+.active {
+    background-color: #5a5d68;
+    border-radius: 5px;
 }
 
 .icon-download {
@@ -544,11 +531,136 @@ textarea:hover {
     margin-right: 10px;
 }
 
-.bg-white {
-    background-color: #E0E0E0 !important;
-    color: #4e5565 !important;
-}
-
 .transparent-selector {
     background-color: transparent;
 }
+
+.meme {
+    height: 615px;
+    width: 610px;
+}
+
+.close-aside {
+    position: absolute;
+    right: 25px;
+    top: 5px;
+    padding: 10px;
+    cursor: pointer;
+    display: none;
+}
+
+label {
+    user-select: none;
+}
+
+figure {
+    background-size: cover;
+}
+/*  light-mode */
+
+.light-mode header {
+    background-color: #e0e0e0;
+}
+
+.light-mode main {
+    background-color: #eeeeee;
+}
+
+.light-mode aside {
+    background-color: #fafafa;
+}
+
+.light-mode h1, .light-mode h3, .light-mode h4, .light-mode h5, .light-mode h6 {
+    color:#424242;
+}
+
+.light-mode .icon {
+    color: #424242;
+}
+
+.light-mode .aling {
+    color: #FFFFFF;
+}
+
+.light-mode textarea, .light-mode select, .light-mode input, .light-mode button:not(.download-meme) {
+    background-color:#e0e0e0;
+}
+
+.light-mode .align-style {
+    color: #424242;
+    background-color: #e0e0e0;
+}
+
+.light-mode .style-filter-color {
+    background-color:#e0e0e0;
+}
+
+/* .light-mode .text-style-contorn {
+    background-color: #e0e0e0;
+} */
+
+.light-mode span:not(.download-text), .light-mode label, .light-mode .input-font-size, .light-mode .text-style-contorn, .light-mode .style-filter select {
+    color: #424242;
+}
+
+.light-mode textarea::placeholder {
+    color: #424242;
+}
+
+.light-mode textarea {
+    color: #424242;
+}
+
+.light-mode .nav-item:hover {
+    background-color: #bdbdbd;
+}
+
+.light-mode .text-style, .light-mode .input-font-size, .light-mode .text-style-contorn {
+    background-color: #e0e0e0;
+}
+
+.light-mode .text-style:hover, .light-mode .input-font-size:hover, .light-mode .text-style-contorn:hover, .light-mode .align-style:hover, .light-mode .input-url:hover, .input-url:focus { 
+    background-color: #bdbdbd;
+}
+
+.light-mode input[type=range]::-webkit-slider-thumb {
+    background: #000;
+}
+
+
+
+/* Responsive  */
+
+@media (max-width: 1300px) {
+    .close-aside {
+        display: block;
+    }
+    /* .container.main {
+        align-self: baseline;
+        margin-left: 15px;
+    } */
+ }
+
+
+@media (max-width: 700px) {
+    .aside {
+        width: 100%;
+        padding: 0;
+    }
+    .image-aside, .text-aside {
+        padding: 20px 20px;
+    }
+    .input-url {
+        width: 97%;
+    }
+    .meme-text, .container.main, .image-container {
+        width: 100%;
+    } 
+    /* .container.main {
+        margin-left: 0;
+    } */
+ }
+
+ .light-mode .style-filter:after {
+     color: #424242;
+ }
