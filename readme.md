@@ -7,7 +7,7 @@
 
 - Página web responsive.
 
-## Construido con:
+## Construida con:
 - HTML 5
 - CSS 3
 - Flexbox

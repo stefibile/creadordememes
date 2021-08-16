@@ -8,11 +8,19 @@
     <title>Generador de memes</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/fdf6782f0a.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
+        integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+        integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+        crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 </head>
 
 <body id="body">
+
+
+    <!-- HEADER -->
 
     <header id="header">
         <div class="container">
@@ -28,11 +36,15 @@
                 </button>
                 <button id="light-mode" class="nav-item">
                     <i class="icon far fa-lightbulb"></i>
-                    <h4>Modo oscuro</h4>
+                    <h4 id="toggle-label">Modo claro</h4>
                 </button>
             </div>
         </div>
     </header>
+
+    <!-- FIN HEADER  -->
+
+    <!-- MAIN -->
 
     <main id="main">
         <div class="container main" id="meme">
@@ -52,10 +64,18 @@
 
     </main>
 
+    <!-- FIN MAIN -->
+
+
+
     <aside class="aside" id="aside">
         <div class="close-aside" onclick="closeAside()">
-        <i class="icon fas fa-times"></i>
+            <i class="icon fas fa-times"></i>
         </div>
+
+
+        <!-- FORM IMAGEN -->
+
         <form id="image-aside" class="image-aside">
             <h3>IMAGEN</h3>
             <div>
@@ -65,10 +85,13 @@
             <div>
                 <h5>FONDO</h5>
                 <div class="div-filtros">
-                    <div class="style-filter-color" id="input-bg">
-                        <input class="button-color" type="color" value="#ffffff" id="image-color-picker" oninput="getImageBackgroundColor()">
-                        <span id="figure-color-value">#FFFFFF</span>
-                    </div>
+                    <label class="labelcheck">
+                        <div class="style-filter-color" id="input-bg">
+                            <input class="button-color" type="color" value="#ffffff" id="image-color-picker"
+                                oninput="getImageBackgroundColor()">
+                            <span id="figure-color-value">#FFFFFF</span>
+                        </div>
+                    </label>
                     <div class="style-filter">
                         <label>
                             <select name="background-style" id="input-layer" onchange="backgroungColorChanger()">
@@ -110,13 +133,18 @@
                     <input id="saturado" type="range" min="100" max="1000" value="0" oninput="actualizarFiltros()">
                 </label>
                 <label>NEGATIVO
-                    <input id="negativo" type="range" min="0" max="1" value="0" step="0.1" oninput="actualizarFiltros()">
+                    <input id="negativo" type="range" min="0" max="1" value="0" step="0.1"
+                        oninput="actualizarFiltros()">
                 </label>
             </div>
             <button id="button-reset" type="reset" class="reset-button">
                 <h4>Restablecer filtros</h4>
             </button>
         </form>
+
+        <!-- FIN FORM IMAGEN -->
+
+        <!-- FORM TEXTO -->
 
         <form id="text-aside" class="text-aside hide">
             <h3>TEXTO</h3>
@@ -128,22 +156,24 @@
                 </label>
 
                 <div class="div-text-checkbox">
-                    <input type="checkbox" class="checkbox" name="image-text-sup" id="image-text-sup"
-                        value="image-text-sup" oninput="hideTopBox()">
-                    <label class="text-checkbox">Sin texto en la parte superior</label>
+                    <label class="text-checkbox">
+                        <input type="checkbox" class="checkbox" name="image-text-sup" id="image-text-sup"
+                            value="image-text-sup" oninput="hideTopBox()">
+                        Sin texto en la parte superior</label>
                 </div>
             </div>
             <div class="style-filter-text">
                 <h5>INFERIOR</h5>
                 <label>
-                    <textarea name="text-area" placeholder="BOTTOM TEXT" class="input-text" id="input-bottom-text" cols="7"
-                        rows="2" oninput="getBottomText()"></textarea>
+                    <textarea name="text-area" placeholder="BOTTOM TEXT" class="input-text" id="input-bottom-text"
+                        cols="7" rows="2" oninput="getBottomText()"></textarea>
                 </label>
 
                 <div class="div-text-checkbox">
-                    <input type="checkbox" class="checkbox" name="image-text-bottom" id="image-text-bottom"
-                        value="image-text-bottom" oninput="ocultarParteInferior()">
-                    <label class="text-checkbox">Sin texto en la parte inferior</label>
+                    <label class="text-checkbox">
+                        <input type="checkbox" class="checkbox" name="image-text-bottom" id="image-text-bottom"
+                            value="image-text-bottom" oninput="ocultarParteInferior()">
+                        Sin texto en la parte inferior</label>
                 </div>
 
 
@@ -152,7 +182,7 @@
                 <h5>FUENTE</h5>
                 <div class="style-filter">
                     <label>
-                        <select name="font-style" id="input-select" class="text-style" onchange="selectFont()" >
+                        <select name="font-style" id="input-select" class="text-style" onchange="selectFont()">
                             <option value="Arial">Arial</option>
                             <option value="Arial Black">Arial Black</option>
                             <option value="American Typewriter, serif">American Typewriter</option>
@@ -162,62 +192,76 @@
                             <option value="Impact">Impact</option>
                             <option value="Verdana">Verdana</option>
                             <option value="Times, Times New Roman, serif">Times New Roman</option>
-                        </select> 
+                        </select>
                     </label>
                 </div>
             </div>
             <div class="div-font-size">
-                <input type="number" id="input-font-size" class="input-font-size w50" name="font-size" value="40" oninput="fontSizeSelector()">
+                <input type="number" id="input-font-size" class="input-font-size w50" name="font-size" value="40"
+                    oninput="fontSizeSelector()">
                 <div class="button-style">
-                    <div class="align-style" id="align-left" onclick="alignToLeft()">
+                    <button type="button" class="align-style" id="align-left" onclick="alignToLeft()">
                         <i class="icon align fas fa-align-left"></i>
-                    </div>
-                    <div class="align-style" id="align-center" onclick="alignToCenter()">
+                    </button>
+                    <button type="button" class="align-style" id="align-center" onclick="alignToCenter()">
                         <i class="icon align fas fa-align-center"></i>
-                    </div>
-                    <div class="align-style" id="align-right" onclick="alignToRight()">
+                    </button>
+                    <button type="button" class="align-style" id="align-right" onclick="alignToRight()">
                         <i class="icon align fas fa-align-right"></i>
-                    </div>
+                    </button>
                 </div>
             </div>
             <div class="div-color">
                 <div>
                     <h5>COLOR</h5>
-                    <div class="style-filter-color" id="input-color">
-                        <input class="button-color" type="color" value="#000000" id="text-color-picker" oninput="getColorText()">
-                        <span id="text-color-value">#000000 </span>
-                    </div>
+                    <label class="labelcheck">
+                        <div class="style-filter-color" id="input-color">
+                            <input class="button-color" type="color" value="#000000" id="text-color-picker"
+                                oninput="getColorText()">
+                            <span id="text-color-value">#000000 </span>
+                    </label>
                 </div>
-                <div>
-                    <h5>FONDO</h5>
-                    <div class="style-filter-color"  id="input-bgcolor">
-                        <input class="button-color" type="color" value="#FFFFFF" id="background-color-picker" oninput="getBackgroundColor()">
+            </div>
+            <div>
+                <h5>FONDO</h5>
+                <label class="labelcheck">
+                    <div class="style-filter-color" id="input-bgcolor">
+                        <input class="button-color" type="color" value="#FFFFFF" id="background-color-picker"
+                            oninput="getBackgroundColor()">
                         <span id="background-color-value">#FFFFFF </span>
-                    </div>
-                </div>
-                <div class="div-text-checkbox mt-0">
-                    <input type="checkbox" class="checkbox" name="text-transparent" id="transparence-text" onchange="selectTransparent()">
-                    <label class="text-checkbox">Fondo Transparente</label>
-                </div>
+                </label>
+            </div>
+            </div>
+            <div class="div-text-checkbox mt-0">
+                <label class="text-checkbox">
+                    <input type="checkbox" class="checkbox" name="text-transparent" id="transparence-text"
+                        onchange="selectTransparent()">
+                    Fondo Transparente</label>
+            </div>
             </div>
 
             <div>
                 <h5>CONTORNO</h5>
                 <div class="div-contorn">
-                    <div id="input-none-contorn" onclick="textShadowNone()" class="text-style-contorn">Ninguno</div>
-                    <div id="input-light-contorn"onclick="textShadowLight()" class="text-style-contorn">Claro</div>
-                    <div id="input-dark-contorn" onclick="textShadowDark()" class="text-style-contorn">Oscuro</div>
+                    <button type="button" id="input-none-contorn" onclick="textShadowNone()"
+                        class="text-style-contorn">Ninguno</button>
+                    <button type="button" id="input-light-contorn" onclick="textShadowLight()"
+                        class="text-style-contorn">Claro</button>
+                    <button type="button" id="input-dark-contorn" onclick="textShadowDark()"
+                        class="text-style-contorn">Oscuro</button>
                 </div>
             </div>
             <div class="input-espaciado">
                 <h5>ESPACIADO</h5>
-                <input type="number" id="input-text-spacing" name="text-spacing" value="35" class="input-font-size" oninput="fontSpacing()">
+                <input type="number" id="input-text-spacing" name="text-spacing" value="35" class="input-font-size"
+                    oninput="fontSpacing()">
             </div>
             <div>
                 <h5>INTERLINEADO</h5>
                 <div class="style-filter">
                     <label>
-                        <select name="line-spacing" id="input-line-spacing" class="text-style w-input-small" onchange="lineSpacingValue()">
+                        <select name="line-spacing" id="input-line-spacing" class="text-style w-input-small"
+                            onchange="lineSpacingValue()">
                             <option value="0.8">0.8</option>
                             <option value="1">1</option>
                             <option value="1.2">1.2</option>
@@ -229,6 +273,9 @@
                 </div>
             </div>
         </form>
+
+        <!-- FIN FORM TEXTO -->
+
     </aside>
 
     <script src="index.js"></script>

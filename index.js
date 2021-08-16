@@ -1,10 +1,17 @@
 
 // Modo Oscuro
-const botonModoOscuro = document.getElementById ("light-mode")
+const lightModeButton = document.getElementById ("light-mode")
 const body = document.getElementById ("body")
+const label = document.getElementById ("toggle-label")
 
-botonModoOscuro.onclick = () => {
+lightModeButton.onclick = () => {
     body.classList.toggle ("light-mode")
+    if (body.className === "light-mode") {
+        label.innerHTML = "Modo oscuro"
+    }
+    else {
+        label.innerHTML = "Modo claro"
+    }
 }
 
 // Asides desplegables

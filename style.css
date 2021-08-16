@@ -351,7 +351,6 @@ input[type=range]::-webkit-slider-thumb {
 .div-text-checkbox {
     margin-top: 5px;
     display: flex;
-    flex-direction: row;
     gap: 5px;
 }
 
@@ -360,8 +359,9 @@ input[type=range]::-webkit-slider-thumb {
     font-family: 'Open Sans', sans-serif;
     font-size: 12px;
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
     margin-top: 0;
 }
 
@@ -556,6 +556,11 @@ label {
 figure {
     background-size: cover;
 }
+
+.labelcheck {
+    margin: 0;
+}
+
 /*  light-mode */
 
 .light-mode header {
@@ -570,8 +575,12 @@ figure {
     background-color: #fafafa;
 }
 
-.light-mode h1, .light-mode h3, .light-mode h4, .light-mode h5, .light-mode h6 {
-    color:#424242;
+.light-mode h1,
+.light-mode h3,
+.light-mode h4,
+.light-mode h5,
+.light-mode h6 {
+    color: #424242;
 }
 
 .light-mode .icon {
@@ -582,8 +591,11 @@ figure {
     color: #FFFFFF;
 }
 
-.light-mode textarea, .light-mode select, .light-mode input, .light-mode button:not(.download-meme) {
-    background-color:#e0e0e0;
+.light-mode textarea,
+.light-mode select,
+.light-mode input,
+.light-mode button:not(.download-meme) {
+    background-color: #e0e0e0;
 }
 
 .light-mode .align-style {
@@ -592,14 +604,15 @@ figure {
 }
 
 .light-mode .style-filter-color {
-    background-color:#e0e0e0;
+    background-color: #e0e0e0;
 }
 
-/* .light-mode .text-style-contorn {
-    background-color: #e0e0e0;
-} */
 
-.light-mode span:not(.download-text), .light-mode label, .light-mode .input-font-size, .light-mode .text-style-contorn, .light-mode .style-filter select {
+.light-mode span:not(.download-text),
+.light-mode label,
+.light-mode .input-font-size,
+.light-mode .text-style-contorn,
+.light-mode .style-filter select {
     color: #424242;
 }
 
@@ -615,11 +628,18 @@ figure {
     background-color: #bdbdbd;
 }
 
-.light-mode .text-style, .light-mode .input-font-size, .light-mode .text-style-contorn {
+.light-mode .text-style,
+.light-mode .input-font-size,
+.light-mode .text-style-contorn {
     background-color: #e0e0e0;
 }
 
-.light-mode .text-style:hover, .light-mode .input-font-size:hover, .light-mode .text-style-contorn:hover, .light-mode .align-style:hover, .light-mode .input-url:hover, .input-url:focus { 
+.light-mode .text-style:hover,
+.light-mode .input-font-size:hover,
+.light-mode .text-style-contorn:hover,
+.light-mode .align-style:hover,
+.light-mode .input-url:hover,
+.input-url:focus {
     background-color: #bdbdbd;
 }
 
@@ -628,39 +648,38 @@ figure {
 }
 
 
-
-/* Responsive  */
+/* Responsive - medias queries */
 
 @media (max-width: 1300px) {
     .close-aside {
         display: block;
     }
-    /* .container.main {
-        align-self: baseline;
-        margin-left: 15px;
-    } */
- }
+}
 
 
 @media (max-width: 700px) {
     .aside {
         width: 100%;
         padding: 0;
+        display: none;
     }
-    .image-aside, .text-aside {
+
+    .image-aside,
+    .text-aside {
         padding: 20px 20px;
     }
+
     .input-url {
         width: 97%;
     }
-    .meme-text, .container.main, .image-container {
-        width: 100%;
-    } 
-    /* .container.main {
-        margin-left: 0;
-    } */
- }
 
- .light-mode .style-filter:after {
-     color: #424242;
- }
+    .meme-text,
+    .container.main,
+    .image-container {
+        width: 100%;
+    }
+}
+
+.light-mode .style-filter:after {
+    color: #424242;
+}
