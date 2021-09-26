@@ -23,6 +23,9 @@ const asideImageButton = document.getElementById ("asideImageButton")
 
 asideTextButton.onclick = () => {
     aside.style.display = "block"
+    // No dejes espacios entre el metodo y sus parametros
+    // deberia ser asi:
+    // asideText.classList.remove("hide")
     asideText.classList.remove ("hide")
     asideImage.classList.add ("hide")
     asideTextButton.classList.add ("active")
@@ -46,6 +49,8 @@ const inputUrlImagen = document.getElementById ("input-url-imagen")
 
 inputUrlImagen.onchange = () => {
     urlImagen = inputUrlImagen.value
+    // privilegiá usar interpolacion:
+    // image.style.backgroundImage = `url("${urlImagen}")`
     image.style.backgroundImage = ("url(" + urlImagen + ")")
 }
 
@@ -59,7 +64,7 @@ const actualizarFiltros = () => {
     hue = document.getElementById ("hue").value
     saturado = document.getElementById ("saturado").value
     negativo = document.getElementById ("negativo").value
-
+// esto seria mucho mas sencillo con interpolacion
     image.style.filter = "brightness(" + brillo + "%)" + "opacity(" + opacidad + "%)" +
     "contrast(" + contraste + "%)" + "blur(" + desenfoque + "px)" + "grayscale(" + escalaDeGrises + "%)" +
     "sepia(" + sepia + "%)" + "hue-rotate(" + hue + "deg)" + "saturate(" + saturado + "%)" + "invert(" + negativo + ")"
@@ -225,6 +230,7 @@ const downloadMeme = () => {
     
     domtoimage.toBlob(meme)
     .then(function (blob) {
+        // amo el nombre
         window.saveAs(blob, "el-meme-mas-buenardo.png");
     });
 }

@@ -26,6 +26,7 @@
         <div class="container">
             <h1>Generador de Memes</h1>
             <div class="nav">
+                <!-- los ids, como las clases, siempre se separan con-guiones. camelCase es para javascript -->
                 <button class="nav-item active" id="asideImageButton">
                     <i class="icon fas fa-file-image"></i>
                     <h4>Imagen</h4>
@@ -51,6 +52,7 @@
             <div class="meme-text top" id="top-box">
                 <h2 id="top-text-container" class="box-text-color font-selector">TOP TEXT</h2>
             </div>
+            <!-- el usuario de lector de pantalla necesita un aria label aca  -->
             <figure class="image-container" id="figure"></figure>
             <div class="meme-text bottom" id="bottom-box">
                 <h2 id="bottom-text-container" class="box-text-color font-selector">BOTTOM TEXT</h2>
@@ -69,6 +71,7 @@
 
 
     <aside class="aside" id="aside">
+        <!-- como sabe el usuario de lector de pantalla lo que hace este boton? necesita un aria label -->
         <div class="close-aside" onclick="closeAside()">
             <i class="icon fas fa-times"></i>
         </div>
@@ -79,12 +82,16 @@
         <form id="image-aside" class="image-aside">
             <h3>IMAGEN</h3>
             <div>
+                <!-- esto no es un titulo, es un label. identifica la funcion del input.  
+                recorda que el lector de pantalla separa los titulos de los forms - 
+            como sabe el uusario lo que hace este input? -->
                 <h5>URL</h5>
                 <input id="input-url-imagen" class="input-url" type="text">
             </div>
             <div>
                 <h5>FONDO</h5>
                 <div class="div-filtros">
+                    <!-- de que sirve el label si no identifica lo que hace este elemento? -->
                     <label class="labelcheck">
                         <div class="style-filter-color" id="input-bg">
                             <input class="button-color" type="color" value="#ffffff" id="image-color-picker"
